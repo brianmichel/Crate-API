@@ -18,23 +18,31 @@ Things undone
 
 Usage
 -----
- Require!
-	require 'crate_api'
+ Require
+
+    require 'crate_api'
  Create a client!
-	client = CrateAPI.new("username", "password")
+
+    client = CrateAPI.new("username", "password")
  Get some crates!
-	crates = client.crates.all
+
+    crates = client.crates.all
  Look at their files!
-	crates[0].files
+
+    crates[0].files
  All crate and item object support getting their short url so...
-	crates[0].short_url || crates[0].files[0].short_url
+
+    crates[0].short_url || crates[0].files[0].short_url
  Add a file to a crate!
-	crates[0].add_file("/path/to/your/file")
+
+    crates[0].add_file("/path/to/your/file")
  Destroy a crate or file!
-	crates[0].destroy - NOTE: this will destroy all of the files contained within without warning
-	crates[0].files[0].destroy
+
+    crates[0].destroy - NOTE: this will destroy all of the files contained within without warning
+    crates[0].files[0].destroy
  Add a crate!
-	client.crates.add("NameOfYourAwesomeCrate")
+
+    client.crates.add("NameOfYourAwesomeCrate")
  That's about it for now!
 
 Copyright
