@@ -21,9 +21,7 @@ module CrateAPI
     end
     
     def self.call(url, verb, params={})
-      puts params
       params.merge!({:basic_auth => @@auth})
-      puts params
       resp = nil
       case verb
       when :get
@@ -31,9 +29,6 @@ module CrateAPI
       when :post
         resp = self.post(url, params)
       end
-      puts url
-      puts "STATUS CODE: #{resp.code}"
-      puts resp.request.options
       if resp.code == 200
         return resp.body
       end
