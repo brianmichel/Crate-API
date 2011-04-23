@@ -5,6 +5,9 @@ module CrateAPI
   class CrateDestroyError < Exception
   end
   
+  class CrateFileAlreadyExistsError < Exception
+  end
+
   class Crate < CrateObject
       attr_reader :files
       def initialize(hash)
@@ -24,7 +27,8 @@ module CrateAPI
       
       def add_file(path)
         file = File.new(path)
-        response = CrateAPI::Base.call("#{CrateAPI::Base::FILES_URL}/#{CrateAPI::Items::ITEM_ACTIONS[:upload]}", :post, {:body => {:file => file, :crate_id => @id}})
+        response = CrateAPI::Base.call("#{CrateAPI::Base::ITEMS_URL}/#{CrateAPI::Items::ITEM_ACTIONS[:upload]}", :post, {:body => {:file => file, :crate_id => @id}})
+        raise CrateFileAlreadyExistsError, response["message"] unless response["status"] != "failure"
       end
   end
 end

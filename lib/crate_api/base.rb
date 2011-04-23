@@ -13,7 +13,7 @@ module CrateAPI
     CRATES_URL = "#{BASE_URL}/crates"
     SHORT_URL = "http://lts.cr/%s"
     def crates(); @crates || CrateAPI::Crates.new(); end
-    def items(); @files || CrateAPI::Items.new(); end
+    def items(); @items || CrateAPI::Items.new(); end
     
     def initialize(username, password)
       raise NotValidUserError unless CrateAPI::Base.authorized?(username, password)
