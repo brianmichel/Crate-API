@@ -34,8 +34,8 @@ module CrateAPI
       end
     end
     
-    def self.authorized?(u, p)
-      resp = self.get("#{AUTH_URL}", {:basic_auth => {:username => u, :password => p}})
+    def self.authorized?(user, pass)
+      resp = self.get("#{AUTH_URL}", {:basic_auth => {:username => user, :password => pass}})
       if resp.code == 401
         return false
       end
