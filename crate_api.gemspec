@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "crate_api.gemspec",
     "lib/crate_api.rb",
     "lib/crate_api/base.rb",
     "lib/crate_api/crate.rb",
