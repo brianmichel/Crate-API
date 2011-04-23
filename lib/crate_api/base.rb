@@ -6,20 +6,16 @@ module CrateAPI
     FILES_URL = "#{BASE_URL}/files"
     CRATES_URL = "#{BASE_URL}/crates"
     SHORT_URL = "http://its.cr/%s"
-
-    FILES_ACTIONS = {
-      :upload => "upload.json",
-      :list => "list.json",
-      :show => "show/%s.json",
-      :destroy => "destroy/%s.json"
-    }
+    def crates(); @crates || CrateAPI::Crates.new(); end
+    def files(); @files || CrateAPI::Files.new(); end
     
     def initialize(username, password)
-      @auth = {:username => username, :password => password}
+      @@auth = {:username => username, :password => password}
     end
     
-    def call(url, verb, params)
-      options.merge!({:basic_auth => @auth})
+    def self.call(url, verb, params)
+      options = Hash.new
+      options.merge!({:basic_auth => @@auth})
       resp = nil
       case verb
       when :get
@@ -27,7 +23,6 @@ module CrateAPI
       when :post
         resp = HTTParty.post(url, options)
       end
-
       if resp.code == 200
         return resp.body
       end

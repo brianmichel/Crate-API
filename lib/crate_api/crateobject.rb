@@ -9,7 +9,7 @@ module CrateAPI
     end
 
     def short_url
-      return SHORT_URL % ["#{:short_code}"]
+      return "#{CrateAPI::Base::SHORT_URL}" % ["#{@short_code}"]
     end
   end
 end

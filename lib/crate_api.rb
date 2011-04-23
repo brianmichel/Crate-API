@@ -1,7 +1,7 @@
 require "httparty"
 require "JSON"
 
-["base", "crate", "crates", "crateobject", "file"].each do |inc|
+["base", "crateobject", "crate", "crates", "file"].each do |inc|
   require File.join(File.dirname(__FILE__), "crate_api", inc)
 end
 
