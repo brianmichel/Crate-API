@@ -7,6 +7,7 @@ module CrateAPI
       end
       
       def destroy
+        CrateAPI::Base.call("#{CrateAPI::Base::FILES_URL}/#{CrateAPI::Files::FILES_ACTIONS[:destroy] % ["#{self.id}"]}", :post)
       end
   end
 end

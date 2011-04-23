@@ -8,12 +8,12 @@ module CrateAPI
     }
 
     def list
-      hash = JSON.parse(CrateAPI::Base.call("#{CrateAPI::Base::CRATES_URL}/#{CRATE_ACTIONS[:list]}", :get, nil))
+      hash = JSON.parse(CrateAPI::Base.call("#{CrateAPI::Base::CRATES_URL}/#{CRATE_ACTIONS[:list]}", :get))
       return Crates.from_array(hash["crates"])
     end
     
     def all
-      hash = JSON.parse(CrateAPI::Base.call("#{CrateAPI::Base::FILES_URL}/#{CRATE_ACTIONS[:list]}", :get, nil))
+      hash = JSON.parse(CrateAPI::Base.call("#{CrateAPI::Base::FILES_URL}/#{CRATE_ACTIONS[:list]}", :get))
       return Crates.from_array(hash["crates"])
     end
     

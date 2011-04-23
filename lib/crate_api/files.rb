@@ -10,7 +10,7 @@ module CrateAPI
     def self.from_array(array)
       files = Array.new
       array.each do |file|
-        files.push(Files.new(file))
+        files.push(File.new(file))
       end
       return files
     end
