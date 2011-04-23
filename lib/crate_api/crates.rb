@@ -1,9 +1,9 @@
 module CrateAPI
   class Crates
     CRATE_ACTIONS = {
-      :add => "add.json"
-      :list => "list.json"
-      :rename => "rename/%s.json"
+      :add => "add.json",
+      :list => "list.json",
+      :rename => "rename/%s.json",
       :destroy => "destroy/%s.json"
     }
 

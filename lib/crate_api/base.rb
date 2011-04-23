@@ -8,9 +8,9 @@ module CrateAPI
     SHORT_URL = "http://its.cr/%s"
 
     FILES_ACTIONS = {
-      :upload => "upload.json"
-      :list => "list.json"
-      :show => "show/%s.json"
+      :upload => "upload.json",
+      :list => "list.json",
+      :show => "show/%s.json",
       :destroy => "destroy/%s.json"
     }
     
