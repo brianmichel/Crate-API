@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{crate_api}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Brian Michel"]
-  s.date = %q{2011-04-23}
+  s.date = %q{2011-04-24}
   s.description = %q{This gem will allow for easy interaction with the Crate API to share your files!}
   s.email = %q{brian.michel@gmail.com}
   s.extra_rdoc_files = [
